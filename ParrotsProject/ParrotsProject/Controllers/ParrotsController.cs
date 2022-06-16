@@ -27,7 +27,7 @@ namespace ParrotsProject.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Parrots/Details/5
+        // GET: Parrots/Details/
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -55,8 +55,6 @@ namespace ParrotsProject.Controllers
         }
 
         // POST: Parrots/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,Age,ImageUrl,BreedId,Id")] Parrot parrot)
@@ -72,7 +70,7 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // GET: Parrots/Edit/5
+        // GET: Parrots/Edit/
         [Authorize]
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -90,9 +88,7 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // POST: Parrots/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Parrots/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -127,7 +123,7 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // GET: Parrots/Delete/5
+        // GET: Parrots/Delete/
         [Authorize]
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -147,7 +143,7 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // POST: Parrots/Delete/5
+        // POST: Parrots/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize]

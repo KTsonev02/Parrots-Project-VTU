@@ -26,7 +26,7 @@ namespace ParrotsProject.Controllers
             return View(await _context.Breeds.ToListAsync());
         }
 
-        // GET: Breeds/Details/5
+        // GET: Breeds/Details
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -52,8 +52,6 @@ namespace ParrotsProject.Controllers
         }
 
         // POST: Breeds/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -69,7 +67,7 @@ namespace ParrotsProject.Controllers
             return View(breed);
         }
 
-        // GET: Breeds/Edit/5
+        // GET: Breeds/Edit/
         [Authorize]
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -86,9 +84,7 @@ namespace ParrotsProject.Controllers
             return View(breed);
         }
 
-        // POST: Breeds/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Breeds/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -122,7 +118,7 @@ namespace ParrotsProject.Controllers
             return View(breed);
         }
 
-        // GET: Breeds/Delete/5
+        // GET: Breeds/Delete/
         [Authorize]
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -141,7 +137,7 @@ namespace ParrotsProject.Controllers
             return View(breed);
         }
 
-        // POST: Breeds/Delete/5
+        // POST: Breeds/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize]
