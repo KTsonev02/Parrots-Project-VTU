@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ParrotsProject.Data;
-using ParrotsProject.Data.Models;
-
-namespace ParrotsProject.Controllers
+﻿namespace ParrotsProject.Controllers
 {
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using ParrotsProject.Data;
+    using ParrotsProject.Data.Models;
     public class BreedsController : Controller
     {
         private readonly ApplicationDbContext _context;

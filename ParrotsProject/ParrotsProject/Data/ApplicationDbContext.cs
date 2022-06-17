@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using ParrotsProject.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ParrotsProject.Data
+﻿namespace ParrotsProject.Data
 {
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+    using ParrotsProject.Data.Models;
     public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
