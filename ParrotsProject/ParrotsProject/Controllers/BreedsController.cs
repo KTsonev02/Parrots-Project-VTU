@@ -17,13 +17,13 @@
             _context = context;
         }
 
-        // GET: Breeds
+    
         public async Task<IActionResult> Index()
         {
             return View(await _context.Breeds.ToListAsync());
         }
 
-        // GET: Breeds/Details
+       
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -41,14 +41,13 @@
             return View(breed);
         }
 
-        // GET: Breeds/Create
+    
         [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Breeds/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -64,7 +63,6 @@
             return View(breed);
         }
 
-        // GET: Breeds/Edit/
         [Authorize]
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -81,7 +79,6 @@
             return View(breed);
         }
 
-        // POST: Breeds/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -115,7 +112,6 @@
             return View(breed);
         }
 
-        // GET: Breeds/Delete/
         [Authorize]
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -134,7 +130,6 @@
             return View(breed);
         }
 
-        // POST: Breeds/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize]

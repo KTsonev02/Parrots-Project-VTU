@@ -20,14 +20,12 @@ namespace ParrotsProject.Controllers
             _context = context;
         }
 
-        // GET: Parrots
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Parrots.Include(p => p.Breed);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Parrots/Details/
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -46,7 +44,6 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // GET: Parrots/Create
         [Authorize]
         public IActionResult Create()
         {
@@ -54,7 +51,6 @@ namespace ParrotsProject.Controllers
             return View();
         }
 
-        // POST: Parrots/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,Age,ImageUrl,BreedId,Id")] Parrot parrot)
@@ -70,7 +66,6 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // GET: Parrots/Edit/
         [Authorize]
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -88,7 +83,6 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // POST: Parrots/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -123,7 +117,6 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // GET: Parrots/Delete/
         [Authorize]
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -143,7 +136,6 @@ namespace ParrotsProject.Controllers
             return View(parrot);
         }
 
-        // POST: Parrots/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize]
